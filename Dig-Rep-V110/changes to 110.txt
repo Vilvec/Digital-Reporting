@@ -1,0 +1,14 @@
+
+OK Launcher Reworked
+> check video to be mp4, so Firefox opens it.
+> base helps to not do all the links over & over again.
+> many things are available & open to everyone at that point
+
+Portrait needs to be reworked
+> adapt for script 1.10
+> adapt to hide 0
+
+Do new video for tutorial
+> done at work. 10:36, forgot to mention Firefox.
+
+Checks if you use shitty Internet Explorer

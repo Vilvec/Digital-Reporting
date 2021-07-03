@@ -1,0 +1,537 @@
+﻿<html>
+
+<title>Reporting v1.10 beta</title>
+<meta name="author" content="Ludwig Wilding">
+<meta name="description" content="Firefox Tool for manually Tracking Performance (Offers & Sales)">
+<base href="https://sps.a1.group/boxes/10238/Shared%20Documents/TSSB/" target="_blank">
+<!--Version 1.09 as of 08. April 2019-->
+<!--
+<link rel="stylesheet" type="text/css" href="https://sps.a1.group/boxes/10238/Shared%20Documents/Restricted/digrepcssv110.css">
+-->
+
+<style>
+
+.unsel {
+  -moz-user-select: none;
+}
+
+*|*:link {
+  color: #111;
+  text-decoration: none;
+  font: 14px sans-serif;
+}
+
+*|*:visited {
+  color: #111;
+  text-decoration: none;
+  font: 14px sans-serif;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+a:active {
+	font-weight: bold;
+}
+
+body {background-color:#FFF;}
+
+.sml {
+	font: 12px sans-serif;
+	-moz-user-select: none;
+}
+
+.report {
+  display: none;
+	position: relative;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+	border-left: 5px solid #111;
+	border-right: 5px solid #111;
+	border-bottom: 5px solid #111;
+	align-items: start;
+  background-color:#111;
+  width: 99%;
+  height: 0px;
+	z-index: 2;
+}
+
+.focusmeta {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 5px;
+  border: 5px solid #111;
+  align-items: start;
+  background-color:#111;
+  width: 99%;
+  height: 95%;
+}
+
+.grid-unit-01 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr;
+  grid-gap: 5px;
+  height: 100%;
+  place-items: stretch;
+}
+
+.grid-solo {
+  display: grid;
+  grid-row: span 1;
+  align-items: stretch;
+  align-content: stretch;
+  background-color: #FFF;
+  color: #111;
+  text-align: center;
+  font: 32px sans-serif;
+  font-weight: bold;
+  }
+
+.grid-solo-inlay {
+display: grid;
+grid-row: span 1;
+align-items: center;
+align-content: center;
+background-color: none;
+color: #111;
+text-align: center;
+font: 32px sans-serif;
+font-weight: bold;
+}
+  
+.minus {
+  display: grid;
+  grid-row: span 2;
+  align-items: center;
+  background-color:#FFF;
+  color: #111;
+  text-align: center;
+  font: 14px sans-serif;
+}
+
+.grid-sentence {
+    display: grid;
+	grid-column: span 3;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 5px;
+    background-color:#111;
+    height: 100%;
+}
+
+.grid-sen-1but {
+	display: grid;
+	grid-column: span 1;
+	background-color: #FFF;
+	color: #111;
+	text-align: center;
+	font: 14px sans-serif;
+	place-items: stretch;
+}
+
+.grid-sen-2but {
+	display: grid;
+	grid-column: span 2;
+	background-color: #FFF;
+	color: #111;
+	text-align: center;
+	font: 14px sans-serif;
+	place-items: stretch;
+}
+
+.grid-sen-3but {
+	display: grid;
+	grid-column: span 3;
+	background-color: #FFF;
+	color: #111;
+	text-align: center;
+	font: 14px sans-serif;
+	place-items: stretch;
+}
+
+.grid-sen-4but {
+	display: grid;
+	grid-column: span 4;
+	align-items: center;
+	background-color:#FFF;
+	color: #111;
+	text-align: center;
+	align-content: center;
+	font: 14px sans-serif;
+	place-items: center center;
+}
+
+.button {
+	display: grid;
+	background-color:#FFF;
+    color: #333;
+    text-align: center;
+    font: 14px sans-serif;
+	place-items: center;
+}
+.button:hover {
+	background-color:#801810;
+	opacity: 1.0;
+	color: #111;
+	transition: 0.2s;
+}
+.button:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+
+.butnoc {
+	display: grid;
+	background-color:#FFF;
+    color: #333;
+    text-align: center;
+    font: 14px sans-serif;
+	place-items: center;
+}
+
+.nobu {
+	display:grid;
+	background-color:#FFF;
+    border: none;
+    color: #333;
+    text-align: center;
+    font: 14px sans-serif;
+	place-items: center center;
+	font-weight: bold;
+	-moz-user-select: none;   
+}
+
+.nobu:hover {
+	background-color:#801810;
+	opacity: 1.0;
+	color: #111;
+	transition: 0.2s;
+}
+.nobu:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+  }
+
+.butnoc:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+  
+.grid-sen-1but:hover {
+	background-color:#801810;
+	opacity: 1.0;
+	color: #111;
+	transition: 0.2s;
+}
+.grid-sen-1but:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+
+.grid-sen-2but:hover {
+	background-color:#801810;
+	opacity: 1.0;
+	color: #111;
+	transition: 0.2s;
+}
+.grid-sen-2but:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+
+.grid-sen-3but:hover {
+	background-color:#801810;
+	opacity: 1.0;
+	color: #111;
+	transition: 0.2s;
+}
+.grid-sen-3but:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+
+
+.grid-solo:hover {
+  background-color:#801810;
+  opacity: 1.0;
+  color: #111;
+  transition: 0.2s;
+  }
+.grid-solo:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.2s;
+    font: 120px;
+  }
+
+.grid-solo-inlay:hover {
+  background-color:#801810;
+  opacity: 1.0;
+  color: #111;
+  transition: 0.2s;
+  }
+.grid-solo-inlay:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.2s;
+    font: 120px;
+  }
+  
+.minus:hover {
+  background-color:#801810;
+  opacity: 1.0;
+  color: #111;
+  transition: 0.2s;
+  
+  }
+.minus:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.2s;
+}
+  
+.grid-sen-4but:hover {
+  background-color:#801810;
+  opacity: 1.0;
+  color: #111;
+  transition: 0.2s;
+}
+
+.grid-sen-4but:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.2s;
+}
+
+</style>
+
+<script src='digrepcodev110.js'></script>
+
+<body>
+
+<div class='focusmeta'>
+
+<div class='grid-unit-01'>
+  <div class='grid-solo'>
+		<div class='grid-solo-inlay' onClick='onClickCal()'>
+    	<label class="unsel"><a class='sml'>Calls:</a><br>
+			<span id='clCal' class='int'>
+			0
+			</span>
+			</label>
+		</div>
+	</div>
+	
+  <div class='minus' onClick='onClickCalNeg()'>
+    	-1
+  </div>
+</div>
+
+<div class='grid-unit-01'>
+  <div class='grid-solo' id='AngSwitch'>
+			<div class='grid-solo-inlay' onClick='onClickAng()'>
+				<label class="unsel">
+				<a class='sml'>
+					Angebote:
+				</a>
+				<span id='clAng' class='sml'>
+					0</span>
+				<a class='sml'>
+				<br>
+				</a>
+				<span id='AngRate'>
+					80
+				</span>
+				</label>
+		</div>
+	</div>
+	
+  <div class='minus' onClick='onClickAngNeg()'>
+    <label class="unsel">
+		-1
+	</label>
+  </div>
+</div>
+
+<div class='grid-sentence'>
+
+	<div class='grid-sen-4but' onClick='onClickAng()'>
+		<label class="unsel">
+			Angebote
+		</label>
+	</div>
+	
+    <div class='grid-sen-1but' onClick='onClickAngNeg()'>
+		<div class='button'>
+			<label class="unsel">
+				-1
+			</label>
+		</div>
+	</div>
+	
+	<div class='grid-sen-1but' onClick='onClickAng()'>
+		<div class='nobu' id='clAngMir'>
+				0
+		</div>
+	</div>
+	
+	<div class='grid-sen-4but' onClick='onClickSa1()'>
+        <label class="unsel">
+			Fokusangebot
+		</label>
+    </div>
+	<div class='grid-sen-1but' onClick='onClickSa1Neg()'>
+		<div class='button'>
+			<label class="unsel">
+				-1
+			</label>
+		</div>
+	</div>
+	<div class='nobu' onClick='onClickSa1()'>
+        <span id ="sa1" class='int'>
+			<label class="unsel">
+				0
+			</label>
+		</span>
+    </div>
+
+	<div class='grid-sen-4but' onClick='onClickSa2()'>
+		<label class="unsel">
+			Fokusverkauf
+		</label>
+    </div>
+	
+    <div class='grid-sen-1but' onClick='onClickSa2Neg()'>
+		<div class='button'>
+			<label class="unsel">
+				-1
+			</label>
+		</div>
+	</div>
+	<div class='nobu' onClick='onClickSa2()'>
+      <span id ="sa2">
+		<label class="unsel">
+			0
+		</label>
+	  </span>
+    </div>
+
+	<div class='grid-sen-3but' onClick='Enfinity()'>
+		<div class='button'>
+			<label class="unsel">
+				Enfinity
+			</label>
+		</div>
+	</div>
+	
+	<div class='grid-sen-3but' onClick='Partnerweb()'>
+		<div class='button'>
+			<label class="unsel">
+				Partnerweb
+			</label>
+		</div>
+	</div>
+	
+	<div class='grid-sen-3but' onClick='onExport()'>
+		<div class='button'>
+			<label class="unsel">
+				Export
+			</label>
+		</div>
+	</div>
+
+	<div class='grid-sen-3but'>
+		<div class='butnoc' id='expmail'>
+			<label class="unsel">
+					Mail
+			</label>
+		</div>
+	</div>
+
+</div> 
+
+<div class='grid-unit-01'>
+	<div class='grid-solo' id='ConSwitch'>
+		<div class='grid-solo-inlay' onClick='onSale()'>
+		<label class='unsel'>
+		<a class='sml'>
+			Sales:<span id='sale'>0</span>
+		</a><br>
+		<span id='ConRate'>
+			5.0
+		</span>
+		</label>
+	</div>
+	</div>
+	
+	<div class='minus' onClick='onSaleNeg()'>
+		<label class="unsel">
+			-1
+		</label>
+	</div>
+</div>
+
+<div class='grid-unit-01'>
+	<div class='grid-solo'>
+			<div class='grid-solo-inlay' onClick='onClickNPS()'>
+				<label class="unsel">
+					<a class='sml'>NPS: 
+						<span id='clNPS'>
+						0
+						</span>
+					<br></a>
+					<span id='NPSRate'>
+					0
+					</span>
+				</label>
+			</div>
+	</div>
+	
+	<div class='minus' onClick='onClickNPSNeg()'>
+		<label class="unsel">-1</label>
+	</div>
+
+</div>
+
+<div class='grid-unit-01'>
+	<div class='grid-solo' onClick='onClickTra()'>
+			<div class='grid-solo-inlay' onClick='onClickTra()'>
+				<label class="unsel">
+					<a class='sml'>Transfer: 
+					<span id='Transfer'>0</span>
+					<br></a>
+					<span id='TransRate'>0</span>
+				</label>
+		</div>
+	</div>
+	
+	<div class='minus' onClick='onClickTraNeg()'>
+		<label class="unsel">-1</label>
+	</div>
+
+</div>
+</div>
+
+<div class='report' id='rephide'>
+		<a id='expexcel' style="background-color:#FFF; border: 5px #111;"></a>
+</div>
+
+</html>

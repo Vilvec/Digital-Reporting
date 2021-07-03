@@ -1,0 +1,329 @@
+﻿<html>
+
+<title>Reporting v1.10 beta</title>
+<meta name="author" content="Ludwig Wilding">
+<meta name="description" content="Firefox Tool for manually Tracking Performance (Offers & Sales)">
+<base href="https://sps.a1.group/boxes/10238/Shared%20Documents/TSSB/" target="_blank">
+<!--Version 1.10 as of 03. May 2019-->
+<!--Important changes: Goal Rewarding is prepared to have various rewards (new window, extra element, alert)
+	With the Hide available, a fix to the visual problem of Report.
+	CSS is external now, helping readability-->
+
+<!--<link rel='stylesheet' type='text/css' href='Restricted/Beta/digrepcssv110.css'>
+  only works for Landscape at the moment-->
+
+<script src='digrepcodev110.js'></script>
+
+<style>
+
+.unsel {
+  -moz-user-select: none;
+}
+
+*|*:link {
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+*|*:visited {
+  color: #666;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body {background-color:#FFF;}
+
+.sml {
+  font: 12px sans-serif;
+  -moz-user-select: none;
+}
+
+.reportpor {
+  display: grid;
+  grid-column: 1 / span 3;
+  grid-gap: 5px;
+  border-bottom: 5px solid #111;
+  border-right: 5px solid #111;
+  border-left: 5px solid #111;
+  align-items: start;
+  background-color:#111;
+  width: 370px;
+}
+
+.portrait-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(90, 1fr);
+  grid-gap: 5px;
+  border: 5px solid #111;
+  align-items: start;
+  background-color:#111;
+  width: 370px;
+  height: 900px;
+}
+
+.portrait-solo {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  background-color: none;
+  color: #111;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  font: 40px sans-serif;
+  font-weight: bold;
+  opacity: 1.0;
+  }
+  
+.portrait-solo-BG {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    background-color: #FFF;
+    color: #111;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    font: 40px sans-serif;
+    font-weight: bold;
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #111;
+    z-index: +1;
+}
+
+.minus {
+    display: grid;
+    align-items: center;
+    background-color:#FFF;
+    color: #111;
+    width: 120px;
+	height: 20px;
+    padding: 1px 0px;
+    text-align: center;
+    font: 14px sans-serif;
+    -moz-user-select: none;
+}
+
+.spaAng {
+  display: grid;
+  grid-column: 1 / span 2;
+  align-items: center;
+  background-color:#FFF;
+  color: #111;
+  width: 2fr;
+  padding: 1px 0px;
+  text-align: center;
+  font: 14px sans-serif;
+}
+
+.grid-sentence {
+  display: grid;
+  grid-column: 2 /span 2;
+  grid-template-columns: 155px 40px 40px;
+  grid-gap: 5px;
+  background-color:#111;
+  height: 120px;
+}
+
+.texare {
+  display: grid;
+  grid-column: 1 / span 3;
+  grid-gap: 0px;
+  align-content: center;
+  background-color:#FFF;
+  border: 0px solid #333;
+  padding: 5px;
+  color: #333;
+  text-align: left;
+  text-decoration: none;
+  font: 14px sans-serif;
+  width: 370px;
+  height: 570px;
+}
+
+.button {
+    display: grid;
+	background-color:#FFF;
+    color: #333;
+    text-align: center;
+    padding: 5px 0 0 0;
+    font: 16px sans-serif;
+    font-weight: bold;
+	place-items: center;
+}
+  
+.nobu {
+	display: grid;
+    background-color:#FFF;
+    border: none;
+    color: #333;
+    text-align: center;
+    padding: 5px 0 0 0;
+    font: 16px sans-serif;
+    font-weight: bold;
+	place-items: center;
+}
+
+.button:hover {
+  background-color:#DA291C;
+  opacity: 0.7;
+  color: #333;
+  transition: 0.2s;
+  }
+.button:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.2s;
+  }
+
+.portrait-solo:hover {
+  background-color:#DA291C;
+  opacity:0.7;
+  color: #333;
+  transition: 0.2s;
+  }
+.portrait-solo:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.2s;
+    font: 120px;
+  }
+  
+.minus:hover {
+  background-color:#DA291C;
+  opacity: 0.7;
+  color: #333;
+  transition: 0.2s;
+  }
+.minus:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.2s;
+}
+  
+.spaAng:hover {
+  background-color:#DA291C;
+  opacity: 0.7;
+  color: #333;
+  transition: 0.2s;
+}
+
+.spaAng:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.2s;
+}
+
+</style>
+
+<body>
+
+<div class='portrait-meta'>
+
+	<div class='portrait-solo-BG' id='AngSwitch'>
+	<div class='portrait-solo' onClick='onClickAng()'>
+		<label class="unsel"><a class='sml'>Angebote: <span id='clAng'><br>Rate:</a><br>
+		<span id='AngRate'>80</span></label>
+	</div>
+	</div>
+
+	<div class='portrait-solo-BG' id='ConSwitch'>
+	<div class='portrait-solo' onClick='onSale()'>
+      <label class='unsel'><a class='sml'>Sales: <span id='sale'>0</span></a><br>
+	  <a class='sml'>Conversion Rate:</a><br>
+          <span id='ConRate'>5.0</span></label>
+	</div>
+	</div>
+
+	<div class='portrait-solo-BG'>
+	<div class='portrait-solo' onClick='onClickNPS()'>
+		<label class="unsel"><a class='sml'>NPS-Hinweis:<br>Anzahl: <span id='clNPS'>0</span></a><br>
+		<span id='NPSRate'>0</span></label>
+	</div>
+	</div>
+
+  <div class='minus' onClick='onClickAngNeg()'>
+    <span>-1</span>
+  </div>
+  <div class='minus' onClick='onSaleNeg()'>
+    <span>-1</span>
+  </div>
+  <div class='minus' onClick='onClickNPSNeg()'>
+      <span>-1</span>
+  </div>
+
+
+<textarea class='texare'>
+</textarea>
+
+  	<div class='portrait-solo-BG'>
+  <div class='portrait-solo' onClick='onClickCal()' onClick='onExport()'>
+    <label class="unsel"><a class='sml'> <br>Calls</a><br></label>
+	<span id='clCal' class='int'>0</span>
+  </div>
+  </div>
+
+
+<div class='grid-sentence'>
+
+    <div  class='button' onClick='onClickAng()'>
+    <label class="unsel"><a class='sml'>Angebote</a><br></label>
+    </div>
+	<div  class='button' onClick='onClickAngNeg()'>
+    <label class="unsel"><a class='sml'>-1</a><br></label>
+    </div>
+    <div class='nobu' onClick='onClickAng()'>
+		<span id='clAngMir' class='int'>0</span>
+    </div>
+  <div class='button' onClick='onClickSa1()'>
+        <a class='sml'>Fokusangebot</a>
+    </div>
+	<div  class='button' onClick='onClickSa1Neg()'>
+    <label class="unsel"><a class='sml'>-1</a><br></label>
+    </div>
+    <div class='nobu' onClick='onClickSa1()'>
+        <span id ="sa1" class='int'>0</span>
+      </div>
+  <div class='button' onClick='onClickTra()'>
+    <a class='sml'>Transfer</a>
+    </div>
+	<div  class='button' onClick='onClickTraNeg()'>
+    <label class="unsel"><a class='sml'>-1</a><br></label>
+    </div>
+    <div class='nobu' onClick='onClickTra()'>
+      <span id ="Transfer">0</span>
+    </div>
+
+</div>
+
+  <div class='minus' onClick='onClickCalNeg()'>
+    <span>-1</span>
+  </div>
+
+<div class='minus' onClick='onClickTra()'><a>Transfer: <span id='TransRate'>0</span>%</a></div>
+<div class='minus' onClick='onExport()'>Export</div>
+<div class='nobu'>
+<span id='expmail'><a href='mailto: &subject=Daily%20Reporting&body=Meine%20heutigen%20Zahlen:%0AVerkäufe:%200%0AAnrufe%20gesamt:%200%0ACalls:%200%0AFeedback:%0A%0ALiebe%20Grüße'>Mail</a></span>
+</div>
+<div class='minus' onClick='Partnerweb()'>Partnerweb</div>
+<div class='minus' onClick='Enfinity()'>Enfinity</div>
+
+</div>
+
+<div class='reportpor' id='rephide'>
+  <!--rephide unhides the export. not using the ID breaks the expexcel as it calculates after rephide.-->
+<a id='expexcel' style="background-color:#FFF;"></a>
+</div>
+
+<a style='display: none', id='sa2'></a>
+<!--just here to realize var 'sa2' as it is not used. therefore it kills the JS when not available.-->
+
+</html>

@@ -1,0 +1,317 @@
+<html>
+
+<title>Reporting Launcher</title>
+
+<meta charset="utf-8">
+<meta name="author" content="Ludwig Wilding">
+<meta name="description" content="Firefox Tool for manually Tracking Performance (Offers & Sales)">
+<base href="https://sps.a1.group/boxes/10238/Shared%20Documents/" target="_blank">
+<!--Version 1.10 as of 08. May 2019-->
+<!--Important changes: Goal Rewarding is prepared to have various rewards (new window, extra element, alert)
+	With the Hide available, a fix to the visual problem of Report.
+	CSS is external now, helping readability-->
+
+<!--<script src='digrepcodev110.js'></script>-->
+<!--leads now to the 'open to everyone' (Visitor profile as of now) part of the Sharepoint-->
+
+<!--Farben: #1BCCD9 und #DA291C*, official A1: #6295ac
+#ad2116 darker red #16a2ad complement dark turquoise
+#801810 very dark red #107880 very dark turquoise-->
+
+<style>
+body {background-color:#FFF;}
+
+*|*:link {
+  color: #DA291C;
+}
+
+*|*:visited {
+  color: #DA291C;
+  text-decoration: none;
+}
+
+.info {
+	color:#FFF;
+	background-color: #16a2ad;
+	padding: 5px 5px 1px 2px;
+}
+
+.tutorial {
+	display: grid;
+	color: #FFF;
+	background-color: #16a2ad;
+	font: 24px sans-serif;
+	text-decoration: none;
+	
+	width: 890px;
+	padding: 15px;
+	margin: 5px 10px;
+}
+
+.tutorial:hover {
+	background-color: #107880;
+	color: #CCC;
+	transition: 0.2s;
+	-moz-user-select: none;
+}
+
+.tutorial:active {
+	background-color: #000;
+	color: #FFF;
+	transition: 0.1s;
+	opacity: 1.0;
+	-moz-user-select: none;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	grid-gap: 5px;
+	padding: 5px;
+	align-items: start;
+	background-color:#FFF;
+	width: 930px;
+}
+
+.button {
+    background-color:#DA291C;
+    color: #FFF;
+    padding: 20px 5px 20px 5px;
+	margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 24px sans-serif;
+}
+
+.blog {
+	background-color:#DDD;
+    border: none;
+    color: #333;
+    padding: 15px;
+	margin: 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font: 16px sans-serif;
+	width: 890px;
+}
+
+a:hover {
+  opacity: 1.0;
+  color: #333;
+  transition: 0.2s;
+  -moz-user-select: none;
+  }
+
+a:active {
+  color: #CCC;
+  transition: 0.2s;
+  opacity: 1.0;
+  -moz-user-select: none;
+  }
+  
+.button:hover {
+	background-color: #801810;
+	color: #CCC;
+	transition: 0.2s;
+	-moz-user-select: none;
+	
+}
+
+.button:active {
+	background-color: #000;
+	color: #FFF;
+	transition: 0.1s;
+	opacity: 1.0;
+	-moz-user-select: none;
+}
+
+.uber {
+	color: #DA291C;
+	background-color: none;
+	padding: 15px;
+	font: 48px sans-serif;
+	font-weight: bold;
+}
+  
+.sleeper:link {
+	color: #333;
+	text-decoration: none;
+}
+
+.sleeper:active {
+	color: #333;
+	text-decoration: none;
+}
+
+.sleeper:visited {
+	color: #333;
+	text-decoration: none;
+}
+
+.uberkill {
+	color: #DA291C;
+	padding: 5%;
+	font: 48px sans-serif;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+}
+
+.anhang {
+	color: #333;
+	font: 24px sans-serif;
+}
+
+</style>
+
+<script  type='text/javascript'>
+/* Sample function that returns boolean in case the browser is Internet Explorer*/
+function killIE() {
+  ua = navigator.userAgent;
+  /* MSIE used to detect old browsers and Trident used to newer ones*/
+	/*var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;*/
+	
+	/*We only do Firefox, therefore reversed logic and detect Firefox*/
+	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+  
+	if (isFirefox == true){
+		document.getElementById('killme').style.display = 'none';
+		document.getElementById('notforIE').style.display = 'grid';
+	}
+	else {
+		document.getElementById('killme').style.display = 'position:absolute';
+		document.getElementById('notforIE').style.display = 'none';
+	}
+
+}
+
+function start1() {window.open("TSSB/Reporting%20Online%20Landscape.html", "_blank", "width=1500, height=220, resizable");};
+
+function start2() {window.open("TSSB/Reporting%20Online%20Portrait.html", "_blank", "width=420, height=940, resizable");};
+
+function start3() {window.open("TSSB/Reporting%20Online%20Focus.html", "_blank", "width=900, height=160, resizable");};
+
+function tutor() {open('https://sps.a1.group/boxes/10238/Shared%20Documents/TSSB/Tutorial-2019-05-10.mp4', '_blank');};
+
+</script>
+
+<body onload="killIE()">
+
+<div class='uberkill' id='killme'>
+	<!-- preventing idiots to use Internet Explorer in a 'kind' way-->
+	Digital Reporting funktioniert im <b>Internet Explorer</b> nicht. </br>
+	Es ist f&uumlr <b>Firefox</b> gemacht.</br>
+	Bitte &oumlffne den Link im Firefox.</br>
+	</br>
+	Danke!</br>
+	</br>
+		<p class = 'anhang'>
+			Um sicherzugehen, dass das auch immer funktioniert, habe ich mich entschlossen, auch andere Browser auszuschlie&szligen.</br>
+			Eine Entschuldigung an alle, die Chrome, Opera, Brave oder andere Browser verwenden.
+		</p>
+</div>
+
+<div id='notforIE'>
+
+<div class='uber'>
+<span>Digital Reporting Tool</span>
+</div>
+
+<div class='grid'>
+<a onclick='start1()' class='button'>Reporting Landscape</a>
+
+<a onclick='start2()' class='button'>Reporting Portrait</a>
+
+<a onclick='start3()' class='button'>Reporting Focus</a>
+</div>
+
+
+<!-- The forest King is far too smart!
+Verschiebung von Abstimmung, weil Cookies?
+Farbe ist verfuegbar!
+> Re-Layout Sätze & Export Buttons<br> -->
+
+<div class='tutorial'>
+<a style='color: #fff; text-decoration: none;' onclick='tutor()'>Tutorial: Video Anleitung</a>
+</div>
+<br>
+
+<div class='blog'>
+<span class='info'>Info:</span> Details und Änderungen findet ihr am <a href='https://sps.a1.group/boxes/10238/Lists/Updates/AllItems.aspx'>Sharepoint</a>
+<br>
+Wer Feedback hat, bitte nur her damit. Seien das Vorschläge, Kritik oder Bugs. In den <a href='https://sps.a1.group/boxes/10238/SitePages/Updates.aspx'>Updates</a> könnt ihr auf aktuelle Änderungen antworten und natürlich Vorschläge einbringen. Andernfalls einfach eine neue Diskussion anlegen, ich verspreche auf alle Fälle eine Antwort!<br>
+Wer lieber nichts schreibt, das jeder User lesen kann, kann mir natürlich auch gerne eine Mail an <a href='mailto:ludwig.wilding@a1.at&subject=Digital%20Reporting:%20Feedback'>ludwig.wilding@a1.at</a> schreiben.
+</div>
+
+<br>
+
+<div class='blog'>
+<a href='https://sps.a1.group/boxes/10238/Lists/Updates/Flat.aspx?RootFolder=%2Fboxes%2F10238%2FLists%2FUpdates%2FUpdate%208%2E%20April%20v1%2E09&FolderCTID=0x012002001F30961E27CB5E4CBCD3421457666F24'>Update 8. April 2019</a><br>
+<br>
+> Endlich Farben<br>
+Wer Zielwerte fuer Angebotsrate & Conversion Rate erreicht, bekommt das unterlegt durch unser komplementaeres Blau.<br>
+Hat ein paar Probleme verursacht, daher hat's ein bisserl gedauert.
+Laeuft aktuell nur in Landscape. Mal sehen, wie schnell die anderen auch davon profitieren.
+</div>
+
+<br>
+
+<!-- The forest King is far too smart!
+> Re-Layout Sätze & Export Buttons<br> -->
+
+<div class='blog'>
+<a href='https://sps.a1.group/boxes/10238/Lists/Updates/Flat.aspx?RootFolder=%2Fboxes%2F10238%2FLists%2FUpdates%2FUpdate%2022%2E%20M%C3%A4rz%202019%2C%20Version%201%2E07&FolderCTID=0x012002001F30961E27CB5E4CBCD3421457666F24', '_blank'>Update 22. März 2019</a><br>
+<br>
+> Reporting Focus Launch: Kleinere Oberfläche ohne Textfenster<br>
+> Button für Transfers: Tansfers können gelogged werden<br>
+  (Umsetzung Vorschlag von Silvia).<br>
+<!--<br>
+<a class='sleeper' href='https://www.youtube.com/watch?v=GoimmCSwvG4'>lalala, The Watchers dance.</a>
+-->
+</div>
+<br>
+<div class='blog'>
+<a href='https://sps.a1.group/boxes/10238/Lists/Updates/Flat.aspx?RootFolder=%2Fboxes%2F10238%2FLists%2FUpdates%2FVorschlag%20Transfer&FolderCTID=0x012002001F30961E27CB5E4CBCD3421457666F24'>Button für Transfer</a><br>
+<br>
+Vorschlag von Silvia Mozelt, einen Button für Transfers einzubauen.
+Meinungen erwünscht!<br>
+Update: Umgesetzt aufgrund der Rückmeldungen.
+</div>
+
+<br>
+<div class='blog'>
+<a href='https://sps.a1.group/boxes/10238/Lists/Updates/Flat.aspx?RootFolder=%2Fboxes%2F10238%2FLists%2FUpdates%2FUpdate%2006%2E%20M%C3%A4rz%202019&FolderCTID=0x012002001F30961E27CB5E4CBCD3421457666F24'>Update 06. März 2019</a><br>
+<br>
+Überarbeites Script eingebunden in Hochformat.<br>
+Buttons hinzugefügt für Enfinity & Partnerweb.
+</div>
+
+<br>
+<div class='blog'>
+<a href='https://sps.a1.group/boxes/10238/Lists/Updates/Flat.aspx?RootFolder=%2Fboxes%2F10238%2FLists%2FUpdates%2FUpdate%204%20%2804%2E03%2E2019%29&FolderCTID=0x012002001F30961E27CB5E4CBCD3421457666F24'>Update 04. März 2019</a><br>
+<br>
+> Checks für negative Zahlen & Check gegen Infinity/NaN<br>
+Wenn noch kein Anruf getrackt wurde, aber ein Angebot gemacht wird, dann holt dir das Tool den Klick automatisch nach. Außerdem kann man nicht unter 0 hinunterzählen, das wird mit jedem Klick geprüft.<br>
+<br>
+> Buttons zu Enfinity & Partnerweb mit inkludiert.<br>
+Somit ein direkterer Zugang um Verkäufe umzusetzen.<br>
+<br>
+> Zeilen haben nun -1<br>
+Man kann Fokusangebot & Fokusverkauf zurückzählen mit (-1)<br>
+<br>
+Neuerungen sind aktuell nur im Querformat (Hochformat folgt asap).
+</div>
+
+<br>
+<div class='blog'>
+<a href='https://sps.a1.group/boxes/10238/Lists/Updates/Flat.aspx?RootFolder=%2Fboxes%2F10238%2FLists%2FUpdates%2FUpdate%203%20%2824%2E02%2E2019%29&FolderCTID=0x012002001F30961E27CB5E4CBCD3421457666F24'>Update 24.Februar 2019:</a><br>
+Der Button 'Mail' bereitet ein automatisiertes Mail an Jan vor.<br>
+(keine Sorge, das Abschicken müsst ihr schon selbst machen.)<br>
+Darin sind automatisch Conversion Rate & Angebotsrate angegegben.<br>
+Das soll die Challenge, die er für den Urlaub aufgegeben hat, einfacher machen.
+</div>
+
+</div></body></html>

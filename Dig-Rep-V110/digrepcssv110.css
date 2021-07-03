@@ -1,0 +1,395 @@
+/*
+    CSS for Digital Reporting
+    Idea & Development by Ludwig Wilding
+*/
+
+/*--Colors: 
+	#1BCCD9 und #da291c*, official A1: #6295ac
+	#ad2116 darker red #16a2ad complement dark turquoise
+	#801810 very dark red #107880 very dark turquoise
+*/
+
+/*  Version 1.10
+    War gedacht, alle Versionen zu harmonisieren.
+    Stellt sich heraus, dass das wenig sinnvoll ist im aktuellen Aufbau.
+    Es sind zu viele Elemente einzeln definiert.
+    Somit ist das externe CSS aktuell nur fuer Landscape.
+*/
+
+.unsel {
+  -moz-user-select: none;   
+}
+
+*|*:link {
+  color: #111;
+  text-decoration: none;
+  font: 14px sans-serif;
+}
+
+*|*:visited {
+  color: #111;
+  text-decoration: none;
+  font: 14px sans-serif;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+a:active {
+	font-weight: bold;
+}
+
+body {background-color:#FFF;}
+
+.sml {
+	font: 12px sans-serif;
+	-moz-user-select: none;
+}
+
+.notification {
+	display: none;
+	grid-template-columns: 1fr;
+	grid-gap: 5px;
+	border-top: 5px solid #111;
+	border-right: 5px solid #111;
+	border-left: 5px solid #111;
+	align-items: start;
+	background-color:#FFF;
+	width: 1440px;
+}
+
+.report {
+  display: none;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 5px;
+  border-top: 5px solid #111;
+  border-right: 5px solid #111;
+  border-left: 5px solid #111;
+  align-items: start;
+  background-color:#111;
+  width: 1460px;
+   -moz-user-select: all;
+}
+
+.reportpor {
+  display: grid;
+  grid-column: 1 / span 3;
+  grid-gap: 5px;
+  border-bottom: 5px solid #111;
+  border-right: 5px solid #111;
+  border-left: 5px solid #111;
+  align-items: start;
+  background-color:#111;
+  width: 370px;
+}
+
+.grid-metacon {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 180px;
+  grid-gap: 5px;
+  border: 5px solid #111;
+  align-items: start;
+  background-color:#111;
+  width: 1460px;
+  height: 185px;
+}
+
+.portrait-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(90, 1fr);
+  grid-gap: 5px;
+  border: 5px solid #111;
+  align-items: start;
+  background-color:#111;
+  width: 370px;
+  height: 900px;
+}
+
+.grid-unit-01 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 160px 10px;
+  grid-gap: 5px;
+  height: 185px;
+}
+
+.portrait-solo {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  background-color: #FFF;
+  color: #111;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  font: 40px sans-serif;
+  font-weight: bold;
+  }
+
+.grid-solo {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    background-color: none;
+    color: #111;
+    height: 160px;
+    width: 130px;
+    text-align: center;
+    font: 48px sans-serif;
+    font-weight: bold;
+    opacity: 1.0;
+}
+
+.grid-solo-BG {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    background-color: #FFF;
+    color: #111;
+    height: 160px;
+    width: 130px;
+    text-align: center;
+    font: 48px sans-serif;
+    font-weight: bold;
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #111;
+    z-index: +1;
+}
+  
+.minus {
+    display: grid;
+    align-items: center;
+    background-color:#FFF;
+    color: #111;
+    width: 130px;
+    padding: 1px 0px;
+    text-align: center;
+    font: 14px sans-serif;
+    -moz-user-select: none;
+}
+
+.grid-sentence {
+    display: grid;
+	grid-template-columns: repeat(6, 45px);
+	grid-gap: 5px;
+    background-color:#111;
+    height: 185px;
+}
+
+.spaAng {
+	display: grid;
+	grid-column: span 4;
+	align-items: center;
+	background-color:#FFF;
+	color: #111;
+	text-align: center;
+	align-content: center;
+	font: 14px sans-serif;
+	place-items: center center;
+}
+
+.grid-sen-1but {
+	display: grid;
+	grid-column: span 1;
+	background-color: #FFF;
+	color: #111;
+	text-align: center;
+	font: 14px sans-serif;
+	place-items: stretch;
+}
+
+.grid-sen-2but {
+	display: grid;
+	grid-column: span 2;
+	background-color: #FFF;
+	color: #111;
+	text-align: center;
+	font: 14px sans-serif;
+	place-items: stretch;
+}
+
+.grid-sen-3but {
+	display: grid;
+	grid-column: span 3;
+	background-color: #FFF;
+	color: #111;
+	text-align: center;
+	font: 14px sans-serif;
+	place-items: stretch;
+}
+
+.texare {
+    display: grid;
+    width: 485px;
+    height: 183px;
+    grid-gap: 0px;
+    align-content: center;
+    background-color:#FFF;
+    border: 0px solid #333;
+    padding: 5px;
+    color: #333;
+    text-align: left;
+    text-decoration: none;
+    font: 14px sans-serif;
+}
+
+.button {
+	display: grid;
+	background-color:#FFF;
+    color: #333;
+    text-align: center;
+    font: 14px sans-serif;
+	place-items: center;
+}
+.button:hover {
+	background-color:#AD2116;
+	opacity: 1.0;
+	color: #333;
+	transition: 0.3s;
+}
+.button:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+
+.butnoc {
+	display: grid;
+	background-color:#FFF;
+    color: #333;
+    text-align: center;
+    font: 14px sans-serif;
+	place-items: center;
+}
+
+.nobu {
+	display:grid;
+	background-color:#FFF;
+    border: none;
+    color: #333;
+    text-align: center;
+    font: 14px sans-serif;
+	place-items: center center;
+	font-weight: bold;
+	-moz-user-select: none;   
+}
+
+.nobu:hover {
+	background-color:#AD2116;
+	opacity: 1.0;
+	color: #333;
+	transition: 0.3s;
+}
+.nobu:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+  }
+
+.butnoc:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+  
+.grid-sen-1but:hover {
+	background-color:#AD2116;
+	opacity: 1.0;
+	color: #333;
+	transition: 0.3s;
+}
+.grid-sen-1but:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+
+.grid-sen-2but:hover {
+	background-color:#AD2116;
+	opacity: 1.0;
+	color: #333;
+	transition: 0.3s;
+}
+.grid-sen-2but:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+
+.grid-sen-3but:hover {
+	background-color:#AD2116;
+	opacity: 1.0;
+	color: #333;
+	transition: 0.3s;
+}
+.grid-sen-3but:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    text-decoration: none;
+}
+
+
+.grid-solo:hover {
+    opacity: 1.0;
+    background-color:#AD2116;
+    color: #333;
+    transition: 0.3s;
+}
+.grid-solo:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.3s;
+    font: 120px;
+  }
+  
+.grid-solo-FG:hover {
+    opacity: 1.0;
+    background-color:#AD2116;
+    color: #333;
+    transition: 0.3s;
+}
+.grid-solo-FG:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.3s;
+    font: 120px;
+}
+  
+.minus:hover {
+    background-color:#AD2116;
+    opacity: 1.0;
+    color: #333;
+    transition: 0.3s;
+}
+.minus:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.3s;
+}
+  
+.spaAng:hover {
+    background-color:#AD2116;
+    opacity: 1.0;
+    color: #333;
+    transition: 0.3s;
+}
+
+.spaAng:active {
+    opacity: 1.0;
+    background-color: #FFF;
+    color: #CCC;
+    transition: 0.3s;
+}

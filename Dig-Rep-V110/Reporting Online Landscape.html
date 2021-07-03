@@ -1,0 +1,218 @@
+﻿<html>
+
+<title>Digital Reporting v1.10</title>
+<meta name="author" content="Ludwig Wilding">
+<meta name="description" content="Firefox Tool for manually Tracking Performance (Offers & Sales)">
+<base href="https://sps.a1.group/boxes/10238/Shared%20Documents/TSSB/" target="_blank">
+<!--Version 1.10 as of 03. May 2019-->
+<!--Important changes: Goal Rewarding is prepared to have various rewards (new window, extra element, alert)
+	With the Hide available, a fix to the visual problem of Report.
+	CSS is external now, helping readability-->
+
+<link rel='stylesheet' type='text/css' href='digrepcssv110.css'>
+
+<script src='digrepcodev110.js'></script>
+
+<body>
+
+<!--
+<div class='notification' id='nothide'>
+<p>Gut gemacht! Bitte besuch mal Deinen Teamleiter! Er freut sich sicherlich!</p>
+</div>
+-->
+
+<div class='report' id='rephide'>
+	<a id='expexcel' style="background-color:#FFF;"></a>
+</div>
+
+<div class='grid-metacon'>
+
+
+<div class='grid-unit-01'>
+<div class='grid-solo-BG'>
+<div  class='grid-solo' onClick='onClickCal()'>
+	<label class="unsel"><a class='sml'> <br>Calls</a><br>
+<span id='clCal' class='int'>
+	0
+</span>
+</label>
+</div>
+</div>
+<div onClick='onClickCalNeg()'>
+	<label class="unsel"><a class='minus'> <br>-1</a><br></label>
+</div>
+</div>
+
+<div class='grid-unit-01'>
+<div class='grid-solo-BG' id='AngSwitch'>
+<div class='grid-solo' onClick='onClickAng()'>
+	<label class="unsel"><a class='sml'>Angebote: <span id='clAng'>0</span><br>Rate:</a><br>
+<span id='AngRate'>80
+</span></label>
+</div>
+</div>
+<div onClick='onClickAngNeg()'>
+	<label class="unsel"><a class='minus'> <br>-1</a><br></label>
+</div>
+</div>
+
+<textarea class='texare'>
+</textarea>
+
+<div class='grid-sentence'>
+
+<div class='spaAng' onClick='onClickAng()'>
+	<label class="unsel">
+		Angebote
+	</label>
+</div>
+
+	<div class='grid-sen-1but' onClick='onClickAngNeg()'>
+	<div class='button'>
+		<label class="unsel">
+			-1
+		</label>
+	</div>
+</div>
+
+<div class='grid-sen-1but' onClick='onClickAng()'>
+	<div class='nobu' id='clAngMir'>
+			0
+	</div>
+</div>
+
+<div class='spaAng' onClick='onClickSa1()'>
+			<label class="unsel">
+		Fokusangebot
+	</label>
+	</div>
+<div class='grid-sen-1but' onClick='onClickSa1Neg()'>
+	<div class='button'>
+		<label class="unsel">
+			-1
+		</label>
+	</div>
+</div>
+<div class='nobu' onClick='onClickSa1()'>
+			<span id ="sa1" class='int'>
+		<label class="unsel">
+			0
+		</label>
+	</span>
+	</div>
+
+<div class='spaAng' onClick='onClickSa2()'>
+	<label class="unsel">
+		Fokusverkauf
+	</label>
+	</div>
+
+	<div class='grid-sen-1but' onClick='onClickSa2Neg()'>
+	<div class='button'>
+		<label class="unsel">
+			-1
+		</label>
+	</div>
+</div>
+<div class='nobu' onClick='onClickSa2()'>
+		<span id ="sa2">
+	<label class="unsel">
+		0
+	</label>
+	</span>
+	</div>
+
+<div class='grid-sen-3but' onClick='Enfinity()'>
+	<div class='button'>
+		<label class="unsel">
+			Enfinity
+		</label>
+	</div>
+</div>
+
+<div class='grid-sen-3but' onClick='Partnerweb()'>
+	<div class='button'>
+		<label class="unsel">
+			Partnerweb
+		</label>
+	</div>
+</div>
+
+<div class='grid-sen-3but' onClick='onExport()'>
+	<div class='button'>
+		<label class="unsel">
+			Export
+		</label>
+	</div>
+</div>
+
+<div class='grid-sen-3but'>
+	<div class='butnoc' id='expmail'>
+		<label class="unsel">
+				Mail
+		</label>
+	</div>
+</div>
+
+</div> 
+
+<div class='grid-unit-01'>
+<div class='grid-solo-BG' id='ConSwitch'>
+<div class='grid-solo' onClick='onSale()'>
+	<label class='unsel'><a class='sml'>
+		Sales:<span id='sale'>0</span></a><br>
+	<a class='sml'>
+		Conversion Rate:
+	</a><br>
+	<span id='ConRate'>5.0</span></label>
+</div>
+</div>
+
+<div onClick='onSaleNeg()'>
+	<label class="unsel"><a class='minus'>
+		<br>-1
+	</a></label>
+</div>
+</div>
+
+<div class='grid-unit-01'>
+<div class='grid-solo-BG'>
+<div class='grid-solo' onClick='onClickNPS()'>
+	<label class="unsel"><a class='sml'>NPS-Hinweis:<br>Anzahl: <span id='clNPS'>0</span></a><br>
+	<span id='NPSRate'>0</span></label>
+</div>
+</div>
+
+<div onClick='onClickNPSNeg()'>
+	<label class="unsel"><a class='minus'> <br>-1</a><br></label>
+</div>
+
+</div>
+
+<div class='grid-unit-01'>
+<div class='grid-solo-BG'>
+<div class='grid-solo' onClick='onClickTra()'>
+	<label class="unsel">
+		<a class='sml'><br>Transfer: 
+			<span id='Transfer'>
+			0
+			</span>
+		<br></a>
+		<span id='TransRate'>
+		0
+		</span>
+	</label>
+</div>
+</div>
+
+<div onClick='onClickTraNeg()'>
+	<label class="unsel"><a class='minus'> <br>-1</a><br></label>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
