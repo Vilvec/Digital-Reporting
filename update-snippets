@@ -1,0 +1,209 @@
+Ideas from january that show difficulty.
+Actually stopped development for some time as the tool wasn't allowed for usage.
+I kept it to myself and doubled the notes on paper as it was mandatory to write it by hand.
+Changed positions in the team at the time, this halt being one of the reasons where I wasn't happy with my environment anymore.
+In defense of my team leader at the time: we had coaches for sales that insisted in the use of paper. It wasn't his call to make.
+I went up the hierarchy discussing with these coaches and got my permission to use it myself, but not to share it with anyone.
+I would take it along with me, rarely updating it as it worked well enough for me while I was really annoyed on the restrictions.
+
+Code Snippet
+exptext = `${date}; Anrufe: ${clCal}; Angebote: ${clAng} ( ${AngRate}%); (Aufteilung:${sa1}, ${sa2}, ${sa3}); Verkäufe: ${sale} (${ConRate}%); NPS: ${clNPS} ( ${NPSRate}%))`;
+
+PROJECT HALT - Death of Digital Money Maker
+After some discussion on the use of a digital Sales Tracking Tool, I got permission to use it for myself.
+As it was quite a close uphill battle, that didn't go well, development is stopped and halted.
+It will not be used by anyone else, so any development is only to make the usage smoother or some random challenge I might think up.
+Even the redesign and latest update is not in the documentation anymore, we will leave it at that.
+On the upside: It was a fun ride to develop with the digital first mindset against paper.
+If we are quite honest, I lost. I got an exception to use it, but it also means there is no way of get anyone else to use it.
+Quite the defeat for a "Empowering Digital Life" company to have all the arguments on paper and writing with your hand.
+Codelines and archive will be stored somewhere else, as it is not relevant anymore.
+The prototype design Shinseiki is live and well, so that's nice too.
+
+UPCOMING
+Excel ist unbeliebt. What do-ooh 
+Datastructure won't be as easy to analyze, might still go for representation on OneNote.
+Ease of use.
+Considering redoing it within the Sharepoint.
+
+IT Anrufen zu Übergabeparameter? Cookie Usage im Kopf. In Gespräch als nicht sinnvoll erachtet.
+
+Considering IAD Button to get personalized IAD Usage.
+
+Might go back to do a "report" > an export, that does the copy pasta for excel.
+fast thought of the moment: JS writes into HTML DIV > we one-click offer a predefined "select", do the copy/paste
+
+Update mit Sascha: Bau es so wie du es für gut haltest, zeig es mir dann!
+Integrate Typing for Numbers (so you set var by input)
+input HTML tag for var creation: https://stackoverflow.com/questions/23982774/turn-html-form-input-into-javascript-variable
+
+February Excel Update
+>we track IAD Usage now.
+>Redid the orientation to columns as the flipping is too much work
+
+DONE at V8
+>we track IAD Usage now.
+I considered it influencing the offering rate. Relation couldn't be proven.
+Still got my own personal IAD Usage now though. That's nice.
+
+> Documentation isn#t ...thorough anymore.
+Various changes to appearance and response.
+
+> V8 runs in GRID, as tables couldn't provide the wanted portability to Excel.
+to account for that, the Excel got modified. There is lots of possibilities within Excel & OneNote that I didn't touch.
+(Bug V5: Values go in columns not into rows. Probably inherits the <br>? no. it's caused by the DIV. Will try inline element (can't float). SCRAPPED. God. Damn. Shit doesn't work AT ALL: Might work on Grid, not bothering with GRID at the time.  afaik I'd end up creating objects again.)
+
+DONE at V5
+> Hover hovers all the children! (this one cheated)
+Info zu Hover over div with children:
+https://teamtreehouse.com/community/change-background-of-parent-div-when-hover-on-child-div-using-jquery
+https://css-tricks.com/hover-on-everything-but/
+https://stackoverflow.com/questions/137449/css-for-hover-that-includes-all-child-elements
+I cheated as in: there is no child slector that really redoes the green. We just use the green from the DIV on a lower z-layer. on top of that we put a transparent .int. As a consequence, I neede to get rid of the button-tags.
+
+> Values are produced in a table, therefore Excel imports them properly.
+
+> Label & Value are in one DIV (therefore the button is just one and great to click), but only the value will be copy-paste, so the labels won't be in the Excel.
+
+> We got a proper generated date on load. Might redo the format, but it works in its international fashion.
+//give out date, so it can be exported as dailies
+var Coo = document.getElementById("Coo").innerHTML = "Calls: " + clCal + ", Angebote " + clAng + ", Angebotsrate: " + AngRate;
+<br><a id='Coo'></a>
+//Gibt eine reine Textzeile mit den aktuellen Werten aus. Super für Copy-Paste
+//Vorbereitung von Export TXT
+//ob <a> wirklich eine gute Idee ist? Es ist immerhin ein inline command.
+> ended up using <span>, so it's not a dysfunctional link anymore.
+
+DONE at V4
+AngRate is calculated in Realtime
+
+integrate borderless window starter <Hajimemashou!> at startup.html
+Startup to borderless: would be nice to have that as executable starter.
+//frameless window in firefox at Shift+F4: window.open("file:///U:/Money Maker/MM3.html", "_blank", "width=800, height=200,resizable");
+
+Integrate 3 Buttons for Satz1-3, removed it for lightweight version.
+Button is DIV and not the variable (therefore new bug of children:hover at CSS)
+
+SCRAPPED
+Check folder for OneNote Check CSV to XLS (probably even JS to XLS)
+too much effort for nothing useful. especially since there is no way of predicting what our sharepoint will do with the given data, or how to produce a relaible table.
+
+Optimizing via <new>, so there is only one Prototype function. Source: https://codeburst.io/javascript-for-beginners-the-new-operator-cee35beb669e
+>Scrapped because there is no calculation anymore, just counting of clicks. This worked as optimisation as it reduces all the calculation.
+
+EXPORT:
+Export is not planned to be implemented at this time.
+It's not in the scope of the project atm, as well as it doesn't provide any significant upgrade.
+why is this shit so complicated?
+also: when exporting, old data gets erased.
+don't know if i can add "new line > add todays data
+excel will not import row by row per day on the fly? will it? getting a text file, adding that line to a new row?
+do you even want to import to excel, that is embedded in OneNote? Sorta HTML > JS > TXT/CSV > EXCEL > OneNote sounds kinda insane.
+Export to clipboard possible?
+Copy-Pasta is much more useful, right? Keep It Simple, Stupid.
+//  var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+//   saveAs(blob, "filename.txt"); 
+Data Structure on U:\ reviewed, first cleanUp
+give out date, so it can be exported as dailies
+
+SOURCES:
+https://stackoverflow.com/questions/22084698/how-to-export-source-content-within-div-to-text-html-file  //Export to TXT
+https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary //Dezimalstellen immer anzeigen (da die Größe des Feldes sonst springt, evtl. div-Container mit fixer Breite einrichten. Sollte aber aktuell okay sein, Varianz ist klein genug, dass das <div> gleich groß bleibt)
+
+Text input for user:
+https://www.universalclass.com/articles/computers/javascript/user-input-and-output-in-javascript.htm 
+
+
+Updates from 16th of january 2018
+
+This one paints the children black.
+.int {
+    background-color: none;
+    border: none;
+    color: #FFF;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    font: 21px sans-serif;
+    /*font-weight: bold;*/
+
+This one allows to copy values without labels. This one makes the buttons clean.
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}/*<label class="unselectable">Unselectable label</label>
+https://stackoverflow.com/questions/2310734/how-to-make-html-text-unselectable
+  */
+
+This one makes the function faster and makes Sum & Ang lovers.
+function onClickSa1() {
+  sa1 += 1; clAng += 1;
+  AngRate = (clAng / clCal) * 100;
+  AngRate = (Math.round( AngRate * 10 ) / 10).toFixed(1);
+  document.getElementById("sa1").innerHTML = sa1;
+  document.getElementById("clAng").innerHTML = clAng;
+  document.getElementById("AngRate").innerHTML = AngRate;
+  };
+
+Updates from 5th of january 2018
+This one loves to have a current date at the start of the line
+If you want a simple DD/MM/YYYY format, I've just come up with this simple solution, although it doesn't prefix missing zeros.
+
+var d = new Date();
+document.write( [d.getDate(), d.getMonth()+1, d.getFullYear()].join('/') );
+
+<body onload='return my_curr_date();'>
+    <input type='text' name='dateField' id='dateField' value='' />
+</body>
+//this one loves the idea that it gets triggered onload :D
+
+
+This one is for taking input from HMTL <input> to JS
+var firstName = document.getElementsByName("firstname")[0].value; //takes variable from HTML <input> to var
+//Assuming you don't have other elements with same names, you can access input values from JavaScript by name as above
+
+//You now have the value from firstname field in JavaScript variable called firstName. Just keep repeating and you got the other input fields too. You can then proceed and wrap these statements to a function and call it when input data changes. For example:
+
+function formChanged() {
+    var firstName = ...
+    var lastName = ...
+}
+Now register this function call to change / keyup events and you have a function that monitors changing form values:
+
+<input type="text" name="firstname" onkeyup="formChanged()" onchange="formChanged()"/>
+<input type='text' name='d' id='d' value='' />
+
+This one is loves the table one and gives Excel tabulator. This one understands that .innerHTML is only friends with function
+<head>
+<style>
+table {
+    border: none;
+    padding: 15px;
+}
+</style>
+<script>
+function kyo() {
+var date = (new Date()).toString().split(' ').splice(1,3).join(' ');
+document.getElementById('d').innerHTML = date;
+}
+</script>
+</head>
+<body>
+<table onload='kyo()'>
+  <tr>
+    <td><span id='date'></span>Date</td>
+    <td>Calls</td>
+    <td>Satz 1</td>
+    <td>Satz 2</td>
+    <td>Satz 3</td>
+    <td>Angebote</td>
+    <td>Rate</td>
+  </tr>
+</table>
+
+</body>
