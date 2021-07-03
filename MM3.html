@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Money Maker</title>
+
+<style>
+body {background-color:#FFF;}
+.button {
+    background-color:#7DBA00;
+    border: none;
+    color: #FFF;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 24px sans-serif;
+}
+</style>
+
+<script  type='text/javascript'>
+var clCal = 0;
+var clAng = 0;
+var AngRate = 0;
+  function onClickCal() {
+   clCal += 1;
+   AngRate = (clAng / clCal) * 100;
+   AngRate = Math.round( AngRate * 10 ) / 10;
+   document.getElementById("clCal").innerHTML = clCal;
+   document.getElementById("AngRate").innerHTML = AngRate;
+  };
+  function onClickAng() {
+    clAng += 1;
+    AngRate = (clAng / clCal) * 100;
+	AngRate = Math.round( AngRate * 10 ) / 10;
+	document.getElementById("clAng").innerHTML = clAng;
+	document.getElementById("AngRate").innerHTML = AngRate;
+  };
+</script>
+
+</head>
+
+<body>
+
+  <div  class='button'>
+<a id='clCal' class='button'>0</a><br><button class='button' onClick='onClickCal()'>Calls</button>
+</div>
+
+<div  class='button'>
+<a id='clAng' class='button'>0</a><br><button class="button" onClick='onClickAng()'>Angebot</button>
+  </div>
+
+<div class='button'>
+  <a class='button' id='AngRate'>0</a><br><div class='button'>AngRate</div></div>
+  </div>
+
+  <div class='button'>
+    <a class='button'>NR</a><br>
+<button class='button' onClick='onClickCal()'>Satz 1</button>
+  </div>
+
+  <div class='button'>
+     <a class='button'>NR</a><br>
+     <button class='button' onClick='onClickCal()'>Satz 2</button>
+  </div>
+
+  <div class='button'>
+     <a class='button'>NR</a><br>
+     <button class='button' onClick='onClickCal()'>Satz 3</button>
+  </div>
+
+</body> </head>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Money Maker</title> <!--substitution for list-->
+
+<style>
+body {background-color:#222;}
+.button {
+    background-color:#7DBA00; //A1 green patented
+    border: none;
+    color: #FFF;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 24px sans-serif;
+    }
+</style>
+
+<script> //saving values into cookies in JS getCookie() lol
+var clCal = 0;
+  function onClickCal() {
+   clCal += 1;
+   var x = document.getElementById("clCal").innerHTML = clCal; //innerText for 'only value'
+   };
+
+var clAng = 0;
+  function onClickAng() {
+    clAng += 1;
+    var y = document.getElementById("clAng").innerHTML = clAng;
+  };
+
+var AngRate = 0;
+  AngRate = x/y;
+   document.getElementById("AngRate").innerHTML = AngRate;
+</script>
+
+</head>
+<body>
+
+<button class="button" onClick="onClickCal()">Calls</button> <a id="clCal" class='button'>0</a>
+
+<button class="button" onClick="onClickAng()">Angebot</button> <a id="clAng" class="button">0</a>
+
+<a id='AngRate' class='button'>0</a>
+
+</body>
+</html>
