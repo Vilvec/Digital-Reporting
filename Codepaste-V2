@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Money Maker</title>
+
+<style>
+body {background-color:#FFF;}
+.frame {
+    background-color:#666; 
+    border: none;
+    color: #FFF;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 24px sans-serif;
+}
+.button {
+    background-color:#7DBA00; 
+    border: none;
+    color: #FFF;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 24px sans-serif;
+}
+</style>
+
+<script  type='text/javascript'>
+var clCal = 0;
+var clAng = 0;
+var AngRate = 0;
+  function onClickCal() {
+   clCal += 1;
+   AngRate = (clAng / clCal) * 100;
+   AngRate = Math.round( AngRate * 10 ) / 10;
+   document.getElementById("clCal").innerHTML = clCal;
+   document.getElementById("AngRate").innerHTML = AngRate;
+  };
+  function onClickAng() {
+    clAng += 1;
+    AngRate = (clAng / clCal) * 100;
+	AngRate = Math.round( AngRate * 10 ) / 10;
+	document.getElementById("clAng").innerHTML = clAng;
+	document.getElementById("AngRate").innerHTML = AngRate;
+  };
+</script>
+
+</head>
+ 
+<body>
+<div class = 'frame'>
+<p class = 'button'><b>Welche S&aumltze nutze ich?</b></p>
+<p>1. Sind Sie mit Ihrer Geschwindigkeit IMMER zufrieden?</p>
+<p>2. Sind Sie viel unterwegs in &Oumlsterreich?</p>
+<p>3. (Wie ist es denn mit Ihrem Handy?)</p>
+<p>
+<div class='frame'>
+<button class='button' onClick='onClickCal()'>Calls</button>
+<br>
+<a id='clCal' class='frame'>0</a>
+</div>
+<div class='frame'>
+ <button class='button' onClick='onClickAng()'>Angebot</button><br>
+ <a id='clAng' class='frame'>0</a>
+</div>
+</p>
+<p>
+<div class='button'>Rate <a id='AngRate'>0</a></div>
+</p>
+</div>
+
+
+
+
+
+
+</body>
