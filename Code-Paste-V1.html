@@ -1,0 +1,50 @@
+<!--V1 is from 4.jan. 2018
+It's still a prototype-->
+<html>
+<head>
+    <title>Money Maker</title>
+<style>
+body {background-color:grey;}
+h1   {color: blue;}
+p    {color: red;}
+.button {
+    background-color:#4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+</style>
+</head>
+ 
+<body>
+    
+	  <script type="text/javascript">
+      var clicksCall = 0;
+      function onClickCall() {
+          clicksCall += 1;
+          document.getElementById("clicksCall").innerHTML = clicksCall;
+      };
+	  		
+	  var clicksAngebot = 0;
+      function onClickAngebot() {
+          clicksAngebot += 1;
+          document.getElementById("clicksAngebot").innerHTML = clicksAngebot;
+      };
+	  
+	  var AngRate = 0;
+      function onRate() {
+          AngRate = (onClickCall()/onClickAngebot())*100;
+		  document.getElementById("AngRate").innerHTML = AngRate;
+      };
+      </script>
+      
+      <button class="button" onClick="onClickCall()">Calls</button> <a id="clicksCall" class="button">0</a>
+      <button class="button" onClick="onClickAngebot()">Angebot</button> <a id="clicksAngebot" class="button">0</a>
+	
+	  <a id="AngRate" class="button">0</a><a id="AngRate" class="button"></a>
+ 
+</body></html>
